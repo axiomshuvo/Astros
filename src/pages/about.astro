@@ -1,0 +1,18 @@
+---
+import { site } from '../data/site.ts';
+import BaseLayouts from '../layouts/BaseLayouts.astro';
+const skills = ['JavaScript', 'TypeScript', 'React', 'Node.js', 'Astro'];
+---
+
+<BaseLayouts title="About">
+
+ <h1>About {site.name}</h1>
+    <p>{site.description}</p>
+    <h2>Skills</h2>
+    <div class="tags">
+      {skills.map((skill) => (
+        <span class="tag" >{skill}</span>
+      ))}
+    </div>
+</BaseLayouts>
+  

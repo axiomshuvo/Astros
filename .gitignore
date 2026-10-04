@@ -1,0 +1,134 @@
+# ==========================================================
+#  Astro Learning — .gitignore
+#  TechStack details  - Astro
+# ==========================================================
+
+
+# ==========================================================
+#  Dependencies
+# ==========================================================
+node_modules/
+.pnp
+.pnp.*
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnpm-store/
+*.tgz
+
+# generated types
+.astro/
+
+
+# ==========================================================
+#  Secrets & environment — NEVER commit
+# ==========================================================
+.env
+.env.*
+!.env.example
+# Catch files that END in .env too, e.g. atlas-credentials.env.
+# (.env.* only matches names that START with ".env." — this covers the rest.)
+*.env
+
+# Certificates & private keys
+*.pem
+*.key
+*.cert
+*.crt
+
+
+# ==========================================================
+#  Next.js / build output
+# ==========================================================
+.next/
+out/
+build/
+dist/
+.turbo/
+next-env.d.ts
+*.tsbuildinfo
+
+
+# ==========================================================
+#  Caches
+# ==========================================================
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.prettiercache
+
+
+# ==========================================================
+#  Testing & coverage
+# ==========================================================
+coverage/
+.nyc_output/
+
+
+# ==========================================================
+#  Logs
+# ==========================================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+
+# ==========================================================
+#  Tooling — keep shared config, ignore per-machine overrides
+# ==========================================================
+# Command Code: taste/skill files ARE committed and shared; only the
+# personal local override is ignored.
+**/.commandcode/settings.local.json
+# Claude Code: same idea — local machine settings only.
+.claude/settings.local.json
+
+
+# ==========================================================
+#  Editors & IDEs
+# ==========================================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.swp
+*.swo
+*~
+*.orig
+
+
+# ==========================================================
+#  Operating system files
+# ==========================================================
+.DS_Store
+.AppleDouble
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+# ==========================================================
+#  Deployment
+# ==========================================================
+.vercel/
+.netlify/
+
+
+# ==========================================================
+#  Local uploads / scratch (if you add them later)
+# ==========================================================
+uploads/
+public/uploads/
+tmp/
+temp/
+*.tmp
+
