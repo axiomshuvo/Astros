@@ -1,8 +1,24 @@
 ---
+import { getCollection } from 'astro:content';
+import PostCard from '../../components/PostCard.astro';
 import BaseLayouts from '../../layouts/BaseLayouts.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
 <BaseLayouts title="Blog">
   <h1>My Blog</h1>
-  <p class="muted" >Welcome to my blog!</p>
+  <p class="muted">Welcome to my blog!</p>
+  <div class="grid">
+    {posts.map((post) => (
+      <PostCard
+        title={post.data.title}
+        description={post.data.description}
+        pubDate={post.data.pubDate}
+        url={`/blog/${post.id}`}
+      />
+    ))}
+  </div>
 </BaseLayouts>
